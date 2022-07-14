@@ -51,23 +51,6 @@ resource "null_resource" "k8s_cluster_setup" {
   }
 }
 
-data "external" "join_node_to_cluster" {
-  count = length(var.compute_instances.public_ip) > 1 ? length(var.compute_instances.public_ip) - 1 : 0
-
-  depends_on = [
-    null_resource.k8s_cluster_setup
-  ]
-
-  program = ["python3", "${path.module}/scripts/microk8s_cluster.py"]
-
-  query = {
-    master_public_ip = var.compute_instances.public_ip[0]
-    worker_public_ip = var.compute_instances.public_ip[count.index + 1]
-    worker_name      = var.compute_instances.name[count.index + 1]
-    private_key      = var.id_rsa
-  }
-}
-
 data "remote_file" "join_command_token" {
   count = length(var.compute_instances.public_ip) > 1 ? length(var.compute_instances.public_ip) - 1 : 0
 
@@ -110,5 +93,18 @@ resource "null_resource" "k8s_cluster_join" {
       "chmod +x /tmp/join-token.sh",
       "/tmp/join-token.sh",
     ]
+  }
+}
+
+data "external" "microk8s_config" {
+  depends_on = [
+    null_resource.k8s_cluster_join
+  ]
+
+  program = ["python3", "${path.module}/scripts/microk8s_cluster.py"]
+
+  query = {
+    master_public_ip = var.compute_instances.public_ip[0]
+    private_key      = var.id_rsa
   }
 }
