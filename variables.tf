@@ -7,7 +7,12 @@ variable "compute_instances" {
 }
 
 variable "my_public_ip" {
-  type = string
+  description = "my public IP address"
+  type        = string
+  validation {
+    condition     = can(cidrnetmask(var.my_public_ip))
+    error_message = "Public IP address must be a valid IPv4 CIDR"
+  }
 }
 
 variable "subnet_cidr" {
