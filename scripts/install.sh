@@ -1,3 +1,5 @@
+# https://microk8s.io/docs/install-alternatives
+
 echo "Install required packages"
 
 sudo apt update && sudo apt install docker.io -y && sudo snap install microk8s --classic --channel=1.23/stable && sudo snap install kubectl --classic
