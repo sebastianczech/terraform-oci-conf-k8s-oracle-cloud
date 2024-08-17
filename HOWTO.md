@@ -1,4 +1,4 @@
-# Notes 
+# Notes
 
 ## Publish new version
 

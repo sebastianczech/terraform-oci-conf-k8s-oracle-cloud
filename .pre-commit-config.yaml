@@ -52,7 +52,7 @@ repos:
           --quiet,
           --soft-fail,
         ]
-  - repo: https://github.com/tenable/terrascan
+-   repo: https://github.com/tenable/terrascan
     rev: v1.19.1
     hooks:
       - id: terraform-pre-commit
