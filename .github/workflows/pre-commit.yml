@@ -1,0 +1,86 @@
+name: Pre-Commit
+
+on:
+  pull_request:
+    branches:
+      - main
+
+env:
+  TERRAFORM_DOCS_VERSION: v0.18.0
+  TFLINT_VERSION: v0.52.0
+
+permissions:
+  actions: none
+  attestations: none
+  checks: none
+  contents: read
+  deployments: none
+  id-token: none
+  issues: none
+  discussions: none
+  packages: none
+  pages: none
+  pull-requests: none
+  repository-projects: none
+  security-events: none
+  statuses: none
+
+jobs:
+  collectInputs:
+    name: Collect workflow inputs
+    runs-on: ubuntu-latest
+    outputs:
+      directories: ${{ steps.dirs.outputs.directories }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get root directories
+        id: dirs
+        uses: clowdhaus/terraform-composite-actions/directories@v1.9.0
+
+  preCommitMinVersions:
+    name: Min TF pre-commit
+    needs: collectInputs
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directory: ${{ fromJson(needs.collectInputs.outputs.directories) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Terraform min/max versions
+        id: minMax
+        uses: clowdhaus/terraform-min-max@v1.3.1
+        with:
+          directory: ${{ matrix.directory }}
+
+      - name: Pre-commit Terraform ${{ steps.minMax.outputs.minVersion }}
+        uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
+        with:
+          terraform-version: ${{ steps.minMax.outputs.minVersion }}
+          tflint-version: ${{ env.TFLINT_VERSION }}
+          terraform-docs-version: ${{ env.TERRAFORM_DOCS_VERSION }}
+
+  preCommitMaxVersion:
+    name: Max TF pre-commit
+    runs-on: ubuntu-latest
+    needs: collectInputs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+
+      - name: Terraform min/max versions
+        id: minMax
+        uses: clowdhaus/terraform-min-max@v1.3.1
+
+      - name: Pre-commit Terraform ${{ steps.minMax.outputs.maxVersion }}
+        uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
+        with:
+          terraform-version: ${{ steps.minMax.outputs.maxVersion }}
+          tflint-version: ${{ env.TFLINT_VERSION }}
+          terraform-docs-version: ${{ env.TERRAFORM_DOCS_VERSION }}
