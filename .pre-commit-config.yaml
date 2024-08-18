@@ -57,3 +57,8 @@ repos:
     hooks:
       - id: terraform-pre-commit
         args: [ '-i terraform' ]
+        files: ^.*\.tf$
+        exclude: |
+          ^\.github/.*$
+          ^files/.*$
+          ^scripts/.*$

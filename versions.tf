@@ -11,5 +11,20 @@ terraform {
       source  = "hashicorp/oci"
       version = "~> 6.7.0"
     }
+
+    null = {
+      source  = "hashicorp/null"
+      version = "~> 3.2.2"
+    }
+
+    external = {
+      source  = "hashicorp/external"
+      version = "~> 2.3.3"
+    }
+
+    time = {
+      source  = "hashicorp/time"
+      version = "~> 0.12.0"
+    }
   }
 }
