@@ -34,7 +34,7 @@ resource "null_resource" "k8s_cluster_setup" {
 
   triggers = {
     public_ip  = var.compute_instances.public_ip[0]
-    always_run = "${timestamp()}"
+    always_run = timestamp()
   }
 
   connection {
@@ -84,7 +84,7 @@ resource "null_resource" "k8s_cluster_join" {
 
   triggers = {
     public_ip  = var.compute_instances.public_ip[count.index + 1]
-    always_run = "${timestamp()}"
+    always_run = timestamp()
   }
 
   connection {

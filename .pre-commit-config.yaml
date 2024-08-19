@@ -56,4 +56,6 @@ repos:
     rev: v1.19.1
     hooks:
       - id: terraform-pre-commit
-        args: [ '-i terraform' ]
+        args: [ '-i terraform --non-recursive' ]
+        files: ^.*\.tf$
+        exclude: ^\.github/.*  # Exclude the .github directory

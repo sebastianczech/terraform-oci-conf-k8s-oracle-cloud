@@ -56,12 +56,19 @@ jobs:
         with:
           directory: ${{ matrix.directory }}
 
+      - name: Install Terrascan
+        run: |
+          curl -L https://github.com/tenable/terrascan/releases/download/v1.19.1/terrascan_1.19.1_Linux_x86_64.tar.gz -o terrascan.tar.gz
+          tar -xzf terrascan.tar.gz terrascan
+          sudo mv terrascan /usr/local/bin/
+
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.minVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
         with:
           terraform-version: ${{ steps.minMax.outputs.minVersion }}
           tflint-version: ${{ env.TFLINT_VERSION }}
           terraform-docs-version: ${{ env.TERRAFORM_DOCS_VERSION }}
+          args: "--all-files --color always --show-diff-on-failure"
 
   preCommitMaxVersion:
     name: Max TF pre-commit
@@ -78,9 +85,16 @@ jobs:
         id: minMax
         uses: clowdhaus/terraform-min-max@v1.3.1
 
+      - name: Install Terrascan
+        run: |
+          curl -L https://github.com/tenable/terrascan/releases/download/v1.19.1/terrascan_1.19.1_Linux_x86_64.tar.gz -o terrascan.tar.gz
+          tar -xzf terrascan.tar.gz terrascan
+          sudo mv terrascan /usr/local/bin/
+
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.maxVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
         with:
           terraform-version: ${{ steps.minMax.outputs.maxVersion }}
           tflint-version: ${{ env.TFLINT_VERSION }}
           terraform-docs-version: ${{ env.TERRAFORM_DOCS_VERSION }}
+          args: "--all-files --color always --show-diff-on-failure"
