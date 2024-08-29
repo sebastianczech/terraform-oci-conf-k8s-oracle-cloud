@@ -94,7 +94,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_compute_instances"></a> [compute\_instances](#input\_compute\_instances) | A map of compute instances to create | `map(any)` | n/a | yes |
-| <a name="input_id_rsa"></a> [id\_rsa](#input\_id\_rsa) | Path to the private key file | `string` | n/a | yes |
+| <a name="input_id_rsa"></a> [id\_rsa](#input\_id\_rsa) | SSH private key | `string` | n/a | yes |
 | <a name="input_lb_id"></a> [lb\_id](#input\_lb\_id) | ID of the load balancer | `string` | n/a | yes |
 | <a name="input_my_public_ip"></a> [my\_public\_ip](#input\_my\_public\_ip) | My public IP address | `string` | n/a | yes |
 | <a name="input_subnet_cidr"></a> [subnet\_cidr](#input\_subnet\_cidr) | CIDR block for the subnet | `string` | n/a | yes |
