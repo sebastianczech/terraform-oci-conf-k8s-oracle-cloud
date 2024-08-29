@@ -10,21 +10,33 @@ Terraform module to configure free Kubernetes cluster in Oracle Cloud
 
 ## Usage
 
-1. Initialize Terraform:
+1. Authenticate to Oracle Cloud:
+
+```bash
+oci session authenticate --region eu-frankfurt-1 --profile-name k8s-oci
+```
+
+Token can be later refreshed by command:
+
+```bash
+oci session refresh --profile k8s-oci
+```
+
+2. Initialize Terraform:
 
 ```bash
 cd examples/basic
 terraform init
 ```
 
-2. Prepare file with variables values:
+3. Prepare file with variables values:
 
 ```bash
 cp example.tfvars terraform.tfvars
 vi terraform.tfvars
 ```
 
-3. Apply code for infrastructure:
+4. Apply code for infrastructure:
 
 ```bash
 terraform apply
