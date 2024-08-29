@@ -45,6 +45,7 @@ terraform apply
 5. Use Kubernetes:
 
 ```bash
+mkdir -p  ~/.kube
 terraform output -raw microk8s_config_public > ~/.kube/microk8s.conf
 export KUBECONFIG=$KUBECONFIG:~/.kube/config:~/.kube/microk8s.conf
 kubectl get all --all-namespaces
