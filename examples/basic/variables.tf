@@ -8,10 +8,16 @@ variable "compartment_id" {
   type        = string
 }
 
-variable "id_rsa" {
+variable "id_rsa_pub" {
   description = "Path to SSH public key"
   type        = string
   default     = "~/.ssh/id_rsa.pub"
+}
+
+variable "id_rsa" {
+  description = "Path to SSH private key"
+  type        = string
+  default     = "~/.ssh/id_rsa"
 }
 
 variable "instance_count" {

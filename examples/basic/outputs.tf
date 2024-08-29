@@ -52,3 +52,18 @@ output "lb_public_ip" {
   description = "public IPs of LB"
   value       = module.infra_k8s_oracle_cloud.lb_public_ip
 }
+
+output "master_public_ip" {
+  description = "public IPs of master node"
+  value       = try(module.conf_k8s_oracle_cloud.master_public_ip, null)
+}
+
+output "microk8s_config_private" {
+  description = "kubectl configuration file with private IP"
+  value       = try(module.conf_k8s_oracle_cloud.microk8s_config_private, null)
+}
+
+output "microk8s_config_public" {
+  description = "kubectl configuration file with public IP"
+  value       = try(module.conf_k8s_oracle_cloud.microk8s_config_public, null)
+}

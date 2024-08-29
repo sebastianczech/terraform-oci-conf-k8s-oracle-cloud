@@ -42,6 +42,14 @@ vi terraform.tfvars
 terraform apply
 ```
 
+5. Use Kubernetes:
+
+```bash
+terraform output -raw microk8s_config_public > ~/.kube/microk8s.conf
+export KUBECONFIG=$KUBECONFIG:~/.kube/config:~/.kube/microk8s.conf
+kubectl get all --all-namespaces
+```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
