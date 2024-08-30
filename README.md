@@ -10,24 +10,45 @@ Terraform module to configure free Kubernetes cluster in Oracle Cloud
 
 ## Usage
 
-1. Initialize Terraform:
+1. Authenticate to Oracle Cloud:
+
+```bash
+oci session authenticate --region eu-frankfurt-1 --profile-name k8s-oci
+```
+
+Token can be later refreshed by command:
+
+```bash
+oci session refresh --profile k8s-oci
+```
+
+2. Initialize Terraform:
 
 ```bash
 cd examples/basic
 terraform init
 ```
 
-2. Prepare file with variables values:
+3. Prepare file with variables values:
 
 ```bash
 cp example.tfvars terraform.tfvars
 vi terraform.tfvars
 ```
 
-3. Apply code for infrastructure:
+4. Apply code for infrastructure:
 
 ```bash
 terraform apply
+```
+
+5. Use Kubernetes:
+
+```bash
+mkdir -p  ~/.kube
+terraform output -raw microk8s_config_public > ~/.kube/microk8s.conf
+export KUBECONFIG=$KUBECONFIG:~/.kube/config:~/.kube/microk8s.conf
+kubectl get all --all-namespaces
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
@@ -74,7 +95,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_compute_instances"></a> [compute\_instances](#input\_compute\_instances) | A map of compute instances to create | `map(any)` | n/a | yes |
-| <a name="input_id_rsa"></a> [id\_rsa](#input\_id\_rsa) | Path to the private key file | `string` | n/a | yes |
+| <a name="input_id_rsa"></a> [id\_rsa](#input\_id\_rsa) | SSH private key | `string` | n/a | yes |
 | <a name="input_lb_id"></a> [lb\_id](#input\_lb\_id) | ID of the load balancer | `string` | n/a | yes |
 | <a name="input_my_public_ip"></a> [my\_public\_ip](#input\_my\_public\_ip) | My public IP address | `string` | n/a | yes |
 | <a name="input_subnet_cidr"></a> [subnet\_cidr](#input\_subnet\_cidr) | CIDR block for the subnet | `string` | n/a | yes |

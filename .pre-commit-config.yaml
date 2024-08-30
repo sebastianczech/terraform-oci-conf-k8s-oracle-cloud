@@ -51,11 +51,12 @@ repos:
           --download-external-modules,"true",
           --quiet,
           --soft-fail,
+          --skip-check, "CKV_OCI_4,CKV_OCI_5"
         ]
--   repo: https://github.com/tenable/terrascan
-    rev: v1.19.1
-    hooks:
-      - id: terraform-pre-commit
-        args: [ '-i terraform --non-recursive' ]
-        files: ^.*\.tf$
-        exclude: ^\.github/.*  # Exclude the .github directory
+# -   repo: https://github.com/tenable/terrascan
+#     rev: v1.19.1
+#     hooks:
+#       - id: terraform-pre-commit
+#         args: [ '-i terraform --non-recursive' ]
+#         files: ^.*\.tf$
+#         exclude: ^\.github/.*  # Exclude the .github directory

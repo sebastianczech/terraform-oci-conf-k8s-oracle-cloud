@@ -1,5 +1,5 @@
 variable "id_rsa" {
-  description = "Path to the private key file"
+  description = "SSH private key"
   type        = string
 }
 
