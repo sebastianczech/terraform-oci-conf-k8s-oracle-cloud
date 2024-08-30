@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.0.2...v1.1.0) (2024-08-30)
+
+### Features
+
+* New example with basic usage of the module ([#6](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/issues/6)) ([5438929](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/54389293c1becc2f266f35ff1bb1129c633703e2))
+
 ## [1.0.2](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.0.1...v1.0.2) (2024-08-26)
 
 ### Documentation
