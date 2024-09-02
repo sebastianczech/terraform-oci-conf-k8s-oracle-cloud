@@ -7,7 +7,7 @@
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_http"></a> [http](#requirement\_http) | ~> 3.4.4 |
-| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.8.0 |
+| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.9.0 |
 
 ## Providers
 
