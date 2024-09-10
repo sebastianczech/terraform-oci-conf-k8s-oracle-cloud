@@ -146,9 +146,9 @@ resource "null_resource" "master_setup" {
 
   provisioner "remote-exec" { inline = ["echo 'Running worker init script on master node with IP ${self.triggers.public_ip}'"] }
 
-  provisioner "remote-exec" { inline = [file("${path.module}/scripts/install.sh")] }
+  provisioner "remote-exec" { inline = [file("${path.module}/scripts/microk8s_install.sh")] }
 
-  provisioner "remote-exec" { inline = [file("${path.module}/scripts/upgrade.sh")] }
+  provisioner "remote-exec" { inline = [file("${path.module}/scripts/microk8s_upgrade.sh")] }
 
   provisioner "file" {
     content = templatefile("${path.module}/files/rules.v4", {
@@ -203,9 +203,9 @@ resource "null_resource" "worker_setup" {
 
   provisioner "remote-exec" { inline = ["echo 'Running worker init script on worker node ${count.index} with IP ${self.triggers.public_ip}'"] }
 
-  provisioner "remote-exec" { inline = [file("${path.module}/scripts/install.sh")] }
+  provisioner "remote-exec" { inline = [file("${path.module}/scripts/microk8s_install.sh")] }
 
-  provisioner "remote-exec" { inline = [file("${path.module}/scripts/upgrade.sh")] }
+  provisioner "remote-exec" { inline = [file("${path.module}/scripts/microk8s_upgrade.sh")] }
 
   provisioner "file" {
     content = templatefile("${path.module}/files/rules.v4", {
