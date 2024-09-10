@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.1...v1.1.2) (2024-09-10)
+
+### Miscellaneous Chores
+
+* Rename script files for microk8s ([021a4a6](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/021a4a62d5e112d6e3d55a243bcf2f12495cc68d))
+* Scripts for bootstrapping cluster k3s and via kubeadm ([1a2f6ad](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/1a2f6ad0af6590c9d55e27501973fcfb545b1173))
+
 ## [1.1.1](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.0...v1.1.1) (2024-09-05)
 
 ### Miscellaneous Chores
