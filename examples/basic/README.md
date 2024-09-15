@@ -20,7 +20,7 @@
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_conf_k8s_oracle_cloud"></a> [conf\_k8s\_oracle\_cloud](#module\_conf\_k8s\_oracle\_cloud) | ../../ | n/a |
-| <a name="module_infra_k8s_oracle_cloud"></a> [infra\_k8s\_oracle\_cloud](#module\_infra\_k8s\_oracle\_cloud) | git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git | 4ac42690db7db1f23f24c9d16c96079244e65854 |
+| <a name="module_infra_k8s_oracle_cloud"></a> [infra\_k8s\_oracle\_cloud](#module\_infra\_k8s\_oracle\_cloud) | git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git | fa13a8cdacfefc83c92ed375824385ffe7c8cb6a |
 
 ## Resources
 
