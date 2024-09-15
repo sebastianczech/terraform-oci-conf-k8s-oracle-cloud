@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.4](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.3...v1.1.4) (2024-09-15)
+
+### Miscellaneous Chores
+
+* Use terraform-oci-infra-k8s-oracle-cloud in version 1.1.4 ([f04f174](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/f04f1741906e0eac8e65cf0849d73bf1c2db5c76))
+
 ## [1.1.3](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.2...v1.1.3) (2024-09-15)
 
 ### Miscellaneous Chores
