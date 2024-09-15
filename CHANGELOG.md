@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.3](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.2...v1.1.3) (2024-09-15)
+
+### Miscellaneous Chores
+
+* Update script for k3s ([01a652c](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/01a652c1a66b2bf85f78463c5e8012b410aac4c1))
+
 ## [1.1.2](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.1...v1.1.2) (2024-09-10)
 
 ### Miscellaneous Chores
