@@ -7,7 +7,7 @@
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_http"></a> [http](#requirement\_http) | ~> 3.4.4 |
-| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.9.0 |
+| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.11.0 |
 
 ## Providers
 
@@ -20,7 +20,7 @@
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_conf_k8s_oracle_cloud"></a> [conf\_k8s\_oracle\_cloud](#module\_conf\_k8s\_oracle\_cloud) | ../../ | n/a |
-| <a name="module_infra_k8s_oracle_cloud"></a> [infra\_k8s\_oracle\_cloud](#module\_infra\_k8s\_oracle\_cloud) | git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git | fa13a8cdacfefc83c92ed375824385ffe7c8cb6a |
+| <a name="module_infra_k8s_oracle_cloud"></a> [infra\_k8s\_oracle\_cloud](#module\_infra\_k8s\_oracle\_cloud) | git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git | e60986c2107a1f125ef619de61ce47104160c1e3 |
 
 ## Resources
 
