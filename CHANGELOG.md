@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.6](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.5...v1.1.6) (2024-10-06)
+
+### Miscellaneous Chores
+
+* Bump hashicorp/oci from 6.9.0 to 6.11.0 ([#12](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/issues/12)) ([6bac5cf](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/6bac5cf2fc480c3ddbfdc7399fa96d4d93711e91))
+* Upgrade oci provider ([e625350](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/e625350494f58cd69dd5feb0d1e436ca95b1a202))
+
 ## [1.1.5](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.4...v1.1.5) (2024-09-21)
 
 ### Miscellaneous Chores
