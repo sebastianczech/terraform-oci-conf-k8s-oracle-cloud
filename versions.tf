@@ -9,7 +9,7 @@ terraform {
 
     oci = {
       source  = "hashicorp/oci"
-      version = "~> 6.11.0"
+      version = "~> 6.12.0"
     }
 
     null = {
