@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.8](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.7...v1.1.8) (2024-11-06)
+
+### Bug Fixes
+
+* Lock provider versions ([#19](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/issues/19)) ([6b40043](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/6b40043a5b9062232b54fbb8f4b3f354a68cbdc2))
+
+### Miscellaneous Chores
+
+* Bump hashicorp/oci from 6.14.0 to 6.15.0 ([#16](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/issues/16)) ([69dfb24](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/69dfb24bb18dee2d6eeaaeba8014ab21dde6aeff))
+* Bump hashicorp/oci from 6.15.0 to 6.16.0 ([#17](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/issues/17)) ([319818a](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/319818a267acc4177fce48475cbee38d527becd5))
+
+### Continuous Integration
+
+* Add Trivy and gitleaks ([#18](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/issues/18)) ([0e8d0fe](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/commit/0e8d0fe0567c84901d70ac5f4f95c91806287789))
+
 ## [1.1.7](https://github.com/sebastianczech/terraform-oci-conf-k8s-oracle-cloud/compare/v1.1.6...v1.1.7) (2024-10-23)
 
 ### Miscellaneous Chores
