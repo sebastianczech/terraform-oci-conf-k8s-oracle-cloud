@@ -7,6 +7,10 @@ repos:
       - id: trailing-whitespace
       - id: check-yaml
       - id: check-added-large-files
+-   repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.0
+    hooks:
+      - id: gitleaks
 -   repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.92.1
     hooks:
@@ -34,6 +38,9 @@ repos:
         args:
           - --hook-config=--retry-once-with-cleanup=true
           - --tf-init-args=-upgrade
+      - id: terraform_trivy
+        args:
+          - '--args=--ignorefile=__GIT_WORKING_DIR__/.trivyignore'
       ### below action lock the terraform providers versions
       ### it can done also by command:
       ### terraform providers lock -platform=linux_arm64 -platform=linux_amd64 -platform=darwin_amd64
