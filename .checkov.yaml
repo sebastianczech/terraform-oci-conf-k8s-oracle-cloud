@@ -1,0 +1,6 @@
+framework:
+  - all
+
+skip-check:
+
+soft-fail: true
