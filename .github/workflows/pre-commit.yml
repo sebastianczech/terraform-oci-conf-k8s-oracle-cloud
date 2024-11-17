@@ -26,6 +26,29 @@ permissions:
   statuses: none
 
 jobs:
+  superLinter:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Super-linter
+        uses: super-linter/super-linter@v7.1.0
+        env:
+          VALIDATE_CHECKOV: ${{ vars.VALIDATE_CHECKOV }}
+          VALIDATE_GITLEAKS: ${{ vars.VALIDATE_GITLEAKS }}
+          VALIDATE_YAML: ${{ vars.VALIDATE_YAML }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   collectInputs:
     name: Collect workflow inputs
     runs-on: ubuntu-latest

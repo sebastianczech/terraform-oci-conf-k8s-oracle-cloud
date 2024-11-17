@@ -3,7 +3,7 @@ data "http" "this" {
 }
 
 module "infra_k8s_oracle_cloud" {
-  source = "git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git?ref=c592740b86d3c79e7dfa4f76a2f9c03c69574e37"
+  source = "git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git?ref=627fe2386102f66dcb1fefde4a55f36920549264"
 
   compartment_id         = var.compartment_id
   id_rsa_pub             = try(file(var.id_rsa_pub), null)
