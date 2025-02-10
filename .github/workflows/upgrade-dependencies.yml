@@ -61,7 +61,7 @@ jobs:
       - name: Update version of terraform-oci-infra-k8s-oracle-cloud
         run: |
           latest_commit_id=$(curl -s https://api.github.com/repos/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/commits/main | jq -r '.sha')
-          sed -i '' "s|git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git?ref=[a-f0-9]*|git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git?ref=${latest_commit_id}|" examples/basic/main.tf
+          sed -i "s|git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git?ref=[a-f0-9]*|git::https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud.git?ref=${latest_commit_id}|" examples/basic/main.tf
           echo "Updated main.tf with the latest commit ID: ${latest_commit_id}"
 
       - name: Run pre-commit
