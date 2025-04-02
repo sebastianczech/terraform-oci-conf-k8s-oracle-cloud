@@ -59,9 +59,9 @@ kubectl get all --all-namespaces
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_external"></a> [external](#requirement\_external) | ~> 2.3.3 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | ~> 3.2.2 |
-| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.28.0 |
+| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.32.0 |
 | <a name="requirement_remote"></a> [remote](#requirement\_remote) | 0.1.3 |
-| <a name="requirement_time"></a> [time](#requirement\_time) | ~> 0.12.0 |
+| <a name="requirement_time"></a> [time](#requirement\_time) | ~> 0.13.0 |
 
 ## Providers
 
@@ -69,9 +69,9 @@ kubectl get all --all-namespaces
 |------|---------|
 | <a name="provider_external"></a> [external](#provider\_external) | ~> 2.3.3 |
 | <a name="provider_null"></a> [null](#provider\_null) | ~> 3.2.2 |
-| <a name="provider_oci"></a> [oci](#provider\_oci) | ~> 6.28.0 |
+| <a name="provider_oci"></a> [oci](#provider\_oci) | ~> 6.32.0 |
 | <a name="provider_remote"></a> [remote](#provider\_remote) | 0.1.3 |
-| <a name="provider_time"></a> [time](#provider\_time) | ~> 0.12.0 |
+| <a name="provider_time"></a> [time](#provider\_time) | ~> 0.13.0 |
 
 ## Modules
 
